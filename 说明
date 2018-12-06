@@ -1,0 +1,3 @@
+要想看到效果需要在编译运行时定义JDK配置运行参数：
+-Dspring.profiles.active="production"//生产环境下
+-Dspring.profiles.active="development"//开发环境下
