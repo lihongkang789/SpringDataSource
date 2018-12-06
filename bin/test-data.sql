@@ -1,0 +1,10 @@
+INSERT INTO user (id,address,age,phone,name) VALUES (1, '西安', 25, '18729201668', '李一');
+INSERT INTO user (id,address,age,phone,name) VALUES (2, '天津', 27, '18729211668', '李二');
+INSERT INTO user (id,address,age,phone,name) VALUES (3, '北京', 26, '18729221668', '李三');
+INSERT INTO user (id,address,age,phone,name) VALUES (4, '南京', 30, '18729231668', '李四');
+INSERT INTO user (id,address,age,phone,name) VALUES (5, '济南', 32, '18729241668', '李五');
+INSERT INTO user (id,address,age,phone,name) VALUES (6, '郑州', 22, '18729251668', '李六');
+INSERT INTO user (id,address,age,phone,name) VALUES (7, '合肥', 24, '18729261668', '李七');
+INSERT INTO user (id,address,age,phone,name) VALUES (8, '杭州', 26, '18729271668', '李八');
+INSERT INTO user (id,address,age,phone,name) VALUES (9, '上海', 28, '18729281668', '李九');
+INSERT INTO user (id,address,age,phone,name) VALUES (10, '广州', 32, '18729291668', '李十');

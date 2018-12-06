@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:c="http://www.springframework.org/schema/c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+    xmlns:jee="http://www.springframework.org/schema/jee" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/jdbc 
+    http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+    http://www.springframework.org/schema/jee 
+    http://www.springframework.org/schema/jee/spring-jee.xsd">  
+    
+     <beans>
+		 <bean id="UserService" class="com.lhk.service.impl.UserServiceImpl">
+	    	<property name="userdao" ref="UserDao"></property>
+	    </bean>
+	    
+	    <bean id="UserDao" class="com.lhk.dao.impl.UserDaoImpl">
+	    	<property name="database" ref="dataSource"></property>
+	    </bean>
+    </beans>
+    
+     <beans profile="development">
+    	<jdbc:embedded-database id="dataSource" type="H2">
+	    	<jdbc:script location="classpath*:schema.sql" />
+	        <jdbc:script location="classpath*:test-data.sql" />
+	    </jdbc:embedded-database>
+	 </beans>
+	 
+	 <beans profile="product">
+	 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        	<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        	<property name="jdbcUrl" value="jdbc:mysql://localhost:6033/test"></property>
+        	<property name="user" value="root"></property>
+        	<property name="password" value="root"></property>
+        </bean>
+	 </beans>
+	 
+   </beans>
